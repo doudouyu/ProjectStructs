@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    tools:context=".MainActivity">
+
+    <RadioGroup
+        android:layout_alignParentBottom="true"
+        android:id="@+id/rg_home_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:background="#ffffff">
+
+        <RadioButton
+            android:id="@+id/rb_1"
+            style="@style/rb_style"
+            android:drawableTop="@drawable/ic_launcher" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray" />
+
+        <RadioButton
+            android:id="@+id/rb_2"
+            style="@style/rb_style"
+            android:drawableTop="@drawable/ic_launcher" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray" />
+
+        <RadioButton
+            android:id="@+id/rb_3"
+            style="@style/rb_style"
+            android:drawableTop="@drawable/ic_launcher" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray" />
+
+        <RadioButton
+            android:id="@+id/rb_4"
+            style="@style/rb_style"
+            android:drawableTop="@drawable/ic_launcher" />
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rg_home_navigation"></android.support.v4.view.ViewPager>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/white" />
+
+</RelativeLayout>
