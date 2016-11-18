@@ -5,12 +5,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.example.administrator.projectstructs.R;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Administrator on 2016/11/8.
@@ -34,7 +36,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-//        holder.iv.setImageResource(list.get(position));
         holder.iv.setImageResource(list[position]);
         if (recyclerItemClickListener!=null){
             holder.iv.setOnClickListener(new View.OnClickListener() {

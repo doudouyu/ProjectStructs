@@ -7,4 +7,6 @@
     <dimen name="app_margin_106">106dp</dimen>
     <dimen name="app_margin_16">16dp</dimen>
     <dimen name="app_margin_3">3dp</dimen>
+    <dimen name="app_margin_0">0dp</dimen>
+    <dimen name="point_size">8dp</dimen>
 </resources>

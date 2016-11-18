@@ -12,8 +12,12 @@ import android.widget.Toast;
 
 import com.example.administrator.projectstructs.R;
 import com.example.administrator.projectstructs.adapter.DividerGridItemDecoration;
+import com.example.administrator.projectstructs.adapter.DividerItemDecoration;
 import com.example.administrator.projectstructs.adapter.MyRecyclerAdapter;
+import com.example.administrator.projectstructs.adapter.SpaceItemDecoration;
 import com.example.administrator.projectstructs.utils.MyUtils;
+
+import java.util.Random;
 
 /**
  * Created by Administrator on 2016/11/3.
@@ -34,7 +38,7 @@ public class FragmentItem2 extends BaseFragment implements View.OnClickListener 
     private boolean isLevel3Show = true;
     private int offset = 200;
     //    private List <Integer> list = new ArrayList<>();
-    private int[] list = {R.drawable.girl1, R.drawable.girl2, R.drawable.girl3, R.drawable.girl4, R.drawable.girl5, R.drawable.girl6, R.drawable.girl7, R.drawable.girl8, R.drawable.girl9, R.drawable.girl10
+    private int[] list = {R.drawable.picture11,R.drawable.pp,R.drawable.meinv,R.drawable.meinv2,R.drawable.meinv3,R.drawable.meinv4,R.drawable.girl1, R.drawable.girl2, R.drawable.girl3, R.drawable.girl4, R.drawable.girl5, R.drawable.girl6, R.drawable.girl7, R.drawable.girl8, R.drawable.girl9, R.drawable.girl10
             , R.drawable.girl1, R.drawable.girl2, R.drawable.girl3, R.drawable.girl4, R.drawable.girl5, R.drawable.girl6, R.drawable.girl7, R.drawable.girl8, R.drawable.girl9, R.drawable.girl10, R.drawable.girl1, R.drawable.girl2, R.drawable.girl3, R.drawable.girl4, R.drawable.girl5, R.drawable.girl6, R.drawable.girl7, R.drawable.girl8, R.drawable.girl9, R.drawable.girl10};
     private Button button;
     private StaggeredGridLayoutManager st;
@@ -66,9 +70,12 @@ public class FragmentItem2 extends BaseFragment implements View.OnClickListener 
 //        rl.setLayoutManager(new LinearLayoutManager(_context,LinearLayoutManager.HORIZONTAL,true));
 //        rl.setLayoutManager(new GridLayoutManager(_context,3));
         //设置分割线
-//        rl.addItemDecoration(new DividerItemDecoration(_context,DividerItemDecoration.VERTICAL_LIST));
+//        rl.addItemDecoration(new DividerItemDecoration(_context, DividerItemDecoration.VERTICAL_LIST));
 //        rl.addItemDecoration(new DividerItemDecoration(_context,DividerItemDecoration.HORIZONTAL_LIST));
-        rl.addItemDecoration(new DividerGridItemDecoration(_context));
+//        rl.addItemDecoration(new DividerGridItemDecoration(_context));
+        //设置图片的间隔
+        SpaceItemDecoration spaceItemDecoration = new SpaceItemDecoration(16);
+        rl.addItemDecoration(spaceItemDecoration);
         MyRecyclerAdapter adapter = new MyRecyclerAdapter(list,_context);
         rl.setAdapter(adapter);
         adapter.setOnRecyclerItemClickListener(new MyRecyclerAdapter.OnRecyclerItemClickListener() {

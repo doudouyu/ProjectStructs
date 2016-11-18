@@ -4,8 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-    android:id="@+id/tv_title"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+    <!--<com.wayww.edittextfirework.FireworkView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/fire_work" />-->
+
+    <com.example.administrator.projectstructs.view.RatioLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.example.administrator.projectstructs.view.RatioFrameLayout
+            android:id="@+id/ll_ratio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"></com.example.administrator.projectstructs.view.RatioFrameLayout>
+    </com.example.administrator.projectstructs.view.RatioLayout>
+
 </LinearLayout>
