@@ -11,12 +11,14 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.administrator.projectstructs.R;
+import com.example.administrator.projectstructs.activity.IndicatorActivity;
 import com.example.administrator.projectstructs.activity.PictureActivity;
 import com.example.administrator.projectstructs.adapter.MyItemPagerAdapter;
 import com.example.administrator.projectstructs.adapter.MyListViewAdapter;
@@ -105,7 +107,13 @@ public class FragmentItem1 extends BaseFragment {
 
             }
         });
-
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(_context,IndicatorActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void addPoint() {

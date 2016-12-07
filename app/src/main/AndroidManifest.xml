@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.PictureActivity"/>
+        <activity android:name=".activity.IndicatorActivity"/>
     </application>
 
 </manifest>

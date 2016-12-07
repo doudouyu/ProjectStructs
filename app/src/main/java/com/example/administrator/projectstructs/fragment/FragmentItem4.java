@@ -1,7 +1,6 @@
 package com.example.administrator.projectstructs.fragment;
 
 import android.graphics.Color;
-import android.support.v7.graphics.drawable.DrawableUtils;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
