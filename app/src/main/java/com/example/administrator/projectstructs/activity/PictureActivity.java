@@ -1,6 +1,5 @@
 package com.example.administrator.projectstructs.activity;
 
-import android.content.Intent;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -21,11 +20,8 @@ public class PictureActivity extends BaseActivity{
 
     @Override
     public void initView() {
-        Intent intent = getIntent();
-        int i =intent.getIntExtra("position",0);
-        int[] arr = intent.getIntArrayExtra("list");
         ImageView iv = (ImageView) findViewById(R.id.image1);
-        iv.setImageResource(arr[i]);
+        iv.setImageResource(R.drawable.girl1);
 
         final TextView tvScore = (TextView) findViewById(R.id.tv_score);
         rb = (RatingBar) findViewById(R.id.rating);

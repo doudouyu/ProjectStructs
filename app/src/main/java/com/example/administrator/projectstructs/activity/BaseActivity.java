@@ -1,8 +1,11 @@
 package com.example.administrator.projectstructs.activity;
 
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.administrator.projectstructs.R;
@@ -14,6 +17,8 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.hide();
         setContentView(getLayoutId());
         initView();
         initData();

@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.example.administrator.projectstructs.R;
 import com.example.administrator.projectstructs.activity.IndicatorActivity;
+import com.example.administrator.projectstructs.activity.MyButtonActivity;
 import com.example.administrator.projectstructs.activity.PictureActivity;
 import com.example.administrator.projectstructs.adapter.MyItemPagerAdapter;
 import com.example.administrator.projectstructs.adapter.MyListViewAdapter;
@@ -111,6 +112,7 @@ public class FragmentItem1 extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(_context,IndicatorActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
@@ -141,15 +143,14 @@ public class FragmentItem1 extends BaseFragment {
         pager.setOnItemClickListener(new CycleViewPager.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                Intent intent = new Intent(_context, PictureActivity.class);
-                intent.putExtra("position", position);
-                intent.putExtra("list", ll_contains);
+                Intent intent = new Intent(_context, MyButtonActivity.class);
+//                intent.putExtra("position", position);
+//                intent.putExtra("list", ll_contains);
                 startActivity(intent);
             }
         });
 
     }
-
     @Override
     protected int getLayoutResId() {
         return R.layout.fragment1;

@@ -17,6 +17,7 @@ import com.example.administrator.projectstructs.fragment.FragmentItem1;
 import com.example.administrator.projectstructs.fragment.FragmentItem2;
 import com.example.administrator.projectstructs.fragment.FragmentItem3;
 import com.example.administrator.projectstructs.fragment.FragmentItem4;
+import com.example.administrator.projectstructs.fragment.FragmentItemscroolView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +68,6 @@ public class MainActivity extends BaseActivity {
         rb2.setOnClickListener(this);
         rb3.setOnClickListener(this);
         rb4.setOnClickListener(this);
-//        viewPager.setOnItemClickListener();
     }
 
     @Override
@@ -97,8 +97,8 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_MENU){
-            new FragmentItem2().onKeyDown(keyCode,event);
+        if (keyCode == KeyEvent.KEYCODE_MENU) {
+            new FragmentItem2().onKeyDown(keyCode, event);
         }
         return super.onKeyDown(keyCode, event);
     }

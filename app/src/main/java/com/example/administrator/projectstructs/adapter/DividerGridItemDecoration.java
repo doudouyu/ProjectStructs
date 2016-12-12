@@ -21,6 +21,7 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration
 
     public DividerGridItemDecoration(Context context)
     {
+        //自定义的属性
         final TypedArray a = context.obtainStyledAttributes(ATTRS);
         mDivider = a.getDrawable(0);
         a.recycle();

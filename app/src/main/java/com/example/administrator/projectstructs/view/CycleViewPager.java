@@ -10,6 +10,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 /**
  * Created by bean on 20161008
  */
@@ -18,7 +20,6 @@ public class CycleViewPager extends ViewPager {
     private int mDownX;
     private int mDownY;
     private int mDownTime;
-
     public CycleViewPager(Context context) {
         super(context);
     }
@@ -57,13 +58,15 @@ public class CycleViewPager extends ViewPager {
                 break;
 
             case MotionEvent.ACTION_UP:
-                startScroll();
+                startScroll();//当手指抬起的时候开启自动轮播
                 int upX = (int) ev.getX();
                 int upY = (int) ev.getY();
                 int upTime = (int) System.currentTimeMillis();
                 int disX = Math.abs(upX- mDownX);
                 int disY = Math.abs(upY - mDownY);
+                //判断手指在屏幕上移动的距离和时间，如果时间在500毫秒之内，且移动的距离小于5就说明是单击事件
                 if (disX<=5&&disY<=5&&upTime - mDownTime<=500){
+                    //如果传进来的条目点击事件不为空，就执行条目点击事件
                     if (mOnItemClickListener !=null){
                         mOnItemClickListener.onItemClick(getCurrentItem());
                     }
@@ -71,7 +74,7 @@ public class CycleViewPager extends ViewPager {
 
                 break;
             case MotionEvent.ACTION_CANCEL:
-                //取消事件
+                //取消事件，当手指移出轮播图的区域后，开启轮播
                 startScroll();
                 break;
         }
@@ -99,12 +102,15 @@ public class CycleViewPager extends ViewPager {
     };
 
     public void startScroll() {
+        //开启轮播之前先关闭轮播，以免混乱
         stopScroll();
         //开启轮播
         handler.sendEmptyMessageDelayed(1, 1000);//4s发送消息
     }
 
-    public void stopScroll() {
+    public void stopScroll()
+    {
+        //关闭轮播，删除所有的handler消息
         handler.removeMessages(1);
     }
 
@@ -153,6 +159,10 @@ public class CycleViewPager extends ViewPager {
     public void setOnItemClickListener(OnItemClickListener listener) {
        this.mOnItemClickListener = listener;
     }
+
+    /**
+     * 轮播图页面的点击事件
+     */
     public interface OnItemClickListener {
          void onItemClick(int position);
     }

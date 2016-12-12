@@ -3,15 +3,17 @@ package com.example.administrator.projectstructs.activity;
 import android.animation.ObjectAnimator;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.TextView;
 
 import com.example.administrator.projectstructs.R;
+import com.example.administrator.projectstructs.adapter.ViewPagerAdapter;
 import com.example.administrator.projectstructs.fragment.BaseFragment;
+import com.example.administrator.projectstructs.fragment.FragmentIndicator1;
+import com.example.administrator.projectstructs.fragment.FragmentIndicator2;
+import com.example.administrator.projectstructs.fragment.FragmentIndicator3;
 import com.example.administrator.projectstructs.fragment.FragmentItem1;
 import com.example.administrator.projectstructs.fragment.FragmentItem2;
-import com.example.administrator.projectstructs.fragment.FragmentItem3;
-import com.example.administrator.projectstructs.fragment.FragmentItem4;
+import com.example.administrator.projectstructs.fragment.FragmentItem5;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,9 +51,9 @@ public class IndicatorActivity extends BaseActivity {
 
     @Override
     public void initData() {
-        fragments.add(new FragmentItem1());
-        fragments.add(new FragmentItem2());
-        fragments.add(new FragmentItem3());
+        fragments.add(new FragmentIndicator1());
+        fragments.add(new FragmentIndicator2());
+        fragments.add(new FragmentIndicator3());
         getLinesWidth();
         //给三个textView设置点击事件
         textView1.setOnClickListener(this);
@@ -112,10 +114,10 @@ public class IndicatorActivity extends BaseActivity {
         }
 
         @Override
-        public void onPageScrollStateChanged(int state) {
+        public    void onPageScrollStateChanged(int state) {
 
-        }
     }
+}
 
     private void scaleX1(View view) {
         ObjectAnimator//
@@ -137,7 +139,6 @@ public class IndicatorActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.tv1:
                 viewPager.setCurrentItem(0);
-
                 break;
             case R.id.tv2:
                 viewPager.setCurrentItem(1);
