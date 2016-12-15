@@ -54,6 +54,7 @@ public class FragmentItem5 extends BaseFragment {
                 list.get(0).setBianji(false);
                 adapter5.notifyDataSetChanged();
                 btn.setVisibility(View.GONE);
+                tv.setText("编辑");
             }
         });
         tv.setOnClickListener(new View.OnClickListener() {

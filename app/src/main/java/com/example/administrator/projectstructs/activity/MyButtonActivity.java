@@ -17,7 +17,10 @@ public class MyButtonActivity extends BaseActivity {
     private Button btnRattingBar;
     private Button btnMessageUi;
     private Button btnIndicator;
-
+    private Button btnShuangLianDong;
+    private Button btnCharsetSort;
+    private Button btnCamera;
+    private Button btnChineseCharactor;
 
     @Override
     public int getLayoutId() {
@@ -30,11 +33,11 @@ public class MyButtonActivity extends BaseActivity {
         btnRattingBar = (Button) findViewById(R.id.btn_2);
         btnMessageUi = (Button) findViewById(R.id.btn_3);
         btnIndicator = (Button) findViewById(R.id.btn_4);
-//        btnScroolTextView = (Button) findViewById(R.id.btn_5);
-//        btnScroolTextView = (Button) findViewById(R.id.btn_6);
-//        btnScroolTextView = (Button) findViewById(R.id.btn_7);
-//        btnScroolTextView = (Button) findViewById(R.id.btn_8);
-//        btnScroolTextView = (Button) findViewById(R.id.btn_9);
+        btnShuangLianDong = (Button) findViewById(R.id.btn_5);
+        btnCharsetSort = (Button) findViewById(R.id.btn_6);
+        btnCamera = (Button) findViewById(R.id.btn_7);
+        btnChineseCharactor = (Button) findViewById(R.id.btn_8);
+//        btnChineseCharactor = (Button) findViewById(R.id.btn_9);
     }
 
     @Override
@@ -63,6 +66,28 @@ public class MyButtonActivity extends BaseActivity {
                 Intent intent1 = new Intent(this,IndicatorActivity.class);
                 startActivity(intent1);
                 break;
+            case R.id.btn_5:
+                //双联动列表
+                Intent intent2 = new Intent(this,LGActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.btn_6:
+                //字母排序
+                Intent intent3 = new Intent(this,CharsetSortActivity.class);
+                startActivity(intent3);
+                break;
+            case R.id.btn_7:
+                //自定义相机
+                Intent intent4 = new Intent(this,CameraActivity.class);
+                startActivity(intent4);
+                break;
+            case R.id.btn_8:
+                //只能输入汉字的edittext
+                Intent intent5 = new Intent(this,ChinaCharactor.class);
+                startActivity(intent5);
+                break;
+            case R.id.btn_9:
+                break;
         }
 
     }
@@ -74,6 +99,10 @@ public class MyButtonActivity extends BaseActivity {
         btnRattingBar.setOnClickListener(this);
         btnMessageUi.setOnClickListener(this);
         btnIndicator.setOnClickListener(this);
+        btnShuangLianDong.setOnClickListener(this);
+        btnCharsetSort.setOnClickListener(this);
+        btnCamera.setOnClickListener(this);
+        btnChineseCharactor.setOnClickListener(this);
 
     }
 }
