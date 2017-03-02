@@ -2,6 +2,7 @@ package com.example.administrator.projectstructs.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.EditText;
@@ -27,4 +28,15 @@ public class LimitEdittext extends EditText {
         return new mInputConnecttion(super.onCreateInputConnection(outAttrs),
                 false);
     }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        return super.dispatchTouchEvent(event);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
 }

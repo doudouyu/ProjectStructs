@@ -35,6 +35,11 @@
             android:screenOrientation="landscape" />
         <activity android:name=".activity.ChinaCharactor" />
         <activity android:name=".activity.CharsetSortActivity" />
+        <receiver android:name="HomeWatcherReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.CLOSE_SYSTEM_DIALOGS" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
